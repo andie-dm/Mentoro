@@ -1,0 +1,12 @@
+
+CREATE DATABASE mentoro CHARACTER SET UTF8MB4;
+
+USE mentoro;
+
+CREATE TABLE person (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	name VARCHAR(100) NOT NULL,
+	phone_number INTEGER NULL,
+	likes_code TINYINT NULL,
+	CONSTRAINT pk_person PRIMARY KEY (id)
+);
