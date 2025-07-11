@@ -1,10 +1,29 @@
 package com.andrea.mentoro.model;
 
-public class PersonDto {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "person")
+public class Person { 
+//https://spring.io/guides/gs/accessing-data-mysql//
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id; 
 	
-	private Long id;
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "phone_number")
 	private Integer phoneNumber; 
+	
+	@Column(name = "likes_code")
 	private Boolean likesCode;
 	
 	public Long getId() {
@@ -31,6 +50,4 @@ public class PersonDto {
 	public void setLikesCode(Boolean likesCode) {
 		this.likesCode = likesCode;
 	}
-	
-
 }
