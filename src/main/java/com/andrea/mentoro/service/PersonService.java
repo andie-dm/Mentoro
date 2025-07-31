@@ -1,9 +1,11 @@
 package com.andrea.mentoro.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.andrea.mentoro.model.Person;
 import com.andrea.mentoro.model.PersonDto;
@@ -32,6 +34,15 @@ public class PersonService {
 	public List<PersonDto> findAll() {
 		Iterable<Person> results = personRepository.findAll();
 		return personTransformer.toDto(results);
+	}
+	
+	public PersonDto findOne(Long id) {
+		Optional<Person> person = personRepository.findById(id);
+		return personTransformer.toDto(person.get());
+	}
+
+	public void delete(Long id) {
+		personRepository.deleteById(id);
 	}
 
 }

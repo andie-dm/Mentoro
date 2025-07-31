@@ -1,1 +1,4 @@
 add code owners file for git reviews
+change phone number from integer to long 
+Add documentation on Swagger
+Add a Put method
