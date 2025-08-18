@@ -1,4 +1,8 @@
 add code owners file for git reviews
 change phone number from integer to long 
+write a method that converts the long number to a formated phone number string
 Add documentation on Swagger
 Add a Put method
+ai on vs code
+run spring boot in vs code
+run a junit test in vs code

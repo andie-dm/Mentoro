@@ -21,7 +21,7 @@ public class Person {
 	private String name;
 	
 	@Column(name = "phone_number")
-	private Integer phoneNumber; 
+	private Long phoneNumber; 
 	
 	@Column(name = "likes_code")
 	private Boolean likesCode;
@@ -38,10 +38,10 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getPhoneNumber() {
+	public Long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public Boolean getLikesCode() {

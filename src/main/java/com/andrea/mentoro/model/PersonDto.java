@@ -4,7 +4,7 @@ public class PersonDto {
 	
 	private Long id;
 	private String name;
-	private Integer phoneNumber; 
+	private String phoneNumber; 
 	private Boolean likesCode;
 	
 	public Long getId() {
@@ -19,10 +19,10 @@ public class PersonDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public Boolean getLikesCode() {

@@ -15,7 +15,7 @@ public class PersonTransformer {
 		Person person = new Person();
 		person.setId(personDto.getId()); 
 		person.setName(personDto.getName());
-		person.setPhoneNumber(personDto.getPhoneNumber());
+		person.setPhoneNumber(phoneNumberToLong(personDto.getPhoneNumber()));
 		person.setLikesCode(personDto.getLikesCode());
 		return person;
 	}
@@ -24,7 +24,7 @@ public class PersonTransformer {
 		PersonDto personDto = new PersonDto();
 		personDto.setId(person.getId());
 		personDto.setName(person.getName());
-		personDto.setPhoneNumber(person.getPhoneNumber());
+		personDto.setPhoneNumber(phoneNumberToString(person.getPhoneNumber()));
 		personDto.setLikesCode(person.getLikesCode());
 		return personDto;
 	}
@@ -35,5 +35,23 @@ public class PersonTransformer {
 		return dtos;
 	}
 
+//	this line is to convert the strings to integer on the phone numbers
+	protected Long phoneNumberToLong(String phoneNumber) {
+		phoneNumber = phoneNumber.replace("(", "");
+		phoneNumber = phoneNumber.replace(")", "");
+		phoneNumber = phoneNumber.replace(" ", "");
+		phoneNumber = phoneNumber.replace("-", "");
+		phoneNumber = phoneNumber.replace(".", "");
+		Long number = Long.valueOf(phoneNumber);
+		return number;
+		
+	}
+	
+	protected String phoneNumberToString(Long phoneNumber) {
+		String input = String.valueOf(phoneNumber);
+		String number = input.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");   //(123) 456-7890		
+		return number;
+	}
+	
 }
 	
